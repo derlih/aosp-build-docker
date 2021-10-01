@@ -3,25 +3,29 @@ FROM ubuntu:18.04
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y \
-    git-core \
-    gnupg \
-    flex \
     bison \
     build-essential \
-    zip \
     curl \
-    zlib1g-dev \
-    gcc-multilib \
+    flex \
+    fontconfig \
     g++-multilib \
-    libc6-dev-i386 \
-    libncurses5 \
+    gcc-multilib \
+    git-core \
+    gnupg \
     lib32ncurses5-dev \
-    x11proto-core-dev \
-    libx11-dev \
     lib32z1-dev \
+    libc6-dev-i386 \
     libgl1-mesa-dev \
+    libncurses5 \
+    libx11-dev \
     libxml2-utils \
-    xsltproc \
+    python \
+    python3 \
     unzip \
-    fontconfig && \
-    apt-get clean
+    x11proto-core-dev \
+    xsltproc \
+    zip \
+    zlib1g-dev && \
+    rm -rf /var/lib/apt/lists/* && \
+    curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/bin/repo && \
+    chmod a+rx /usr/bin/repo
